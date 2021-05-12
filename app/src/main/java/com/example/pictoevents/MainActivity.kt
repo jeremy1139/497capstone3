@@ -36,11 +36,11 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
         setContentView(R.layout.activity_main)
 
         //Create NavHostFragment
-        val host : NavHostFragment = supportFragmentManager.findFragmentById(R.id.host_fragment)
+        /*val host : NavHostFragment = supportFragmentManager.findFragmentById(R.id.host_fragment)
                 as NavHostFragment? ?: return
 
         val navController = host.navController
-        setupBottomNavMenu(navController)
+        setupBottomNavMenu(navController)*/
 
         //Request  permissions
         if (!allPermissionsGranted()){
@@ -50,10 +50,10 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
 
         createDirectory()
     }
-    private fun setupBottomNavMenu(navController : NavController){
+    /*private fun setupBottomNavMenu(navController : NavController){
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav?.setupWithNavController(navController)
-    }
+    }*/
 
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -79,6 +79,8 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
         FileManager.prepareDirectory(
             FileManager.getFileBase())
     }
+
+
 
     // Needed to make the add event fragment work when using the pickers: 10/11/20 trying to move it back to fragment
 //    fun showTimePickerDialog(v: View) {

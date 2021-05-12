@@ -3,30 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/calendarFragment">
+    app:startDestination="@id/mainMenuFragment">
     <fragment
-        android:id="@+id/calendarFragment"
-        android:name="com.example.pictoevents.UI.CalendarFragment"
-        android:label="fragment_calendar"
-        tools:layout="@layout/fragment_calendar" />
-    <fragment
-        android:id="@+id/cameraFragment"
-        android:name="com.example.pictoevents.UI.CameraFragment"
-        android:label="fragment_camera"
-        tools:layout="@layout/fragment_camera" />
-    <fragment
-        android:id="@+id/addEventFragment"
+        android:id="@+id/addEventFragment2"
         android:name="com.example.pictoevents.UI.AddEventFragment"
         android:label="fragment_add_event"
-        tools:layout="@layout/fragment_add_event" />
+        tools:layout="@layout/fragment_add_event" >
+        <action
+            android:id="@+id/action_addEventFragment2_to_fragment_confirmation"
+            app:destination="@id/fragment_confirmation" />
+    </fragment>
     <fragment
-        android:id="@+id/filesFragment"
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.pictoevents.UI.mainMenuFragment"
+        android:label="mainMenuFragment" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_fragment_addOption"
+            app:destination="@id/fragment_addOption" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_calendarFragment2"
+            app:destination="@id/calendarFragment2" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_filesFragment2"
+            app:destination="@id/filesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment2"
+        android:name="com.example.pictoevents.UI.CameraFragment"
+        android:label="CameraFragment" >
+        <action
+            android:id="@+id/action_cameraFragment2_to_fragment_pic_confirmation"
+            app:destination="@id/fragment_pic_confirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/filesFragment2"
         android:name="com.example.pictoevents.UI.FilesFragment"
         android:label="fragment_files"
         tools:layout="@layout/fragment_files" >
         <action
-            android:id="@+id/action_filesFragment_to_placeholder"
-            app:destination="@id/placeholder" />
+            android:id="@+id/action_filesFragment2_to_fragment_pic_confirmation"
+            app:destination="@id/fragment_pic_confirmation" />
     </fragment>
-    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/fragment_addOption"
+        android:name="com.example.pictoevents.UI.fragment_addOption"
+        android:label="fragment_addOption" >
+        <action
+            android:id="@+id/action_fragment_addOption_to_cameraFragment2"
+            app:destination="@id/cameraFragment2" />
+        <action
+            android:id="@+id/action_fragment_addOption_to_addEventFragment2"
+            app:destination="@id/addEventFragment2" />
+        <action
+            android:id="@+id/action_fragment_addOption_to_filesFragment2"
+            app:destination="@id/filesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment2"
+        android:name="com.example.pictoevents.UI.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/fragment_pic_confirmation"
+        android:name="com.example.pictoevents.fragment_pic_confirmation"
+        android:label="fragment_pic_confirmation" >
+        <action
+            android:id="@+id/action_fragment_pic_confirmation_to_fragment_confirmation"
+            app:destination="@id/fragment_confirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_confirmation"
+        android:name="com.example.pictoevents.UI.fragment_confirmation"
+        android:label="fragment_confirmation" />
 </navigation>
