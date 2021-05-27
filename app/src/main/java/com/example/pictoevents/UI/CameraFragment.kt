@@ -263,6 +263,7 @@ package com.example.pictoevents.UI
 
             // Listener for button used to capture photo
             //controls.findViewById<ImageButton>(R.id.camera_capture_button).setOnClickListener {
+            //TODO
                 captureButton.setOnClickListener{
                 // Get a stable reference of the modifiable image capture use case
                 imageCapture?.let { imageCapture ->
@@ -273,6 +274,7 @@ package com.example.pictoevents.UI
                         FileManager.getFileBase())
                     val imageName = "${System.currentTimeMillis()}.png"
                     FileManager.setFileName(imageName)
+                    //image file
                     val photoFile = File(FileManager.getFileBase(), "/$imageName")
 
                     // Setup image capture metadata
